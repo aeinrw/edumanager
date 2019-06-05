@@ -4,17 +4,19 @@
 
 Login::Login(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Login),
-    db(QSqlDatabase::addDatabase("QMYSQL"))
+    ui(new Ui::Login)
 {
     ui->setupUi(this);
 
     //设置固定大小
-    this->setFixedSize(400,300);
+    this->setFixedSize(500,400);
     //设置标题
     this->setWindowTitle("教务管理系统");
 
-    ui->rbtnStudent->setChecked(true);
+    ui->editPassword->setText("admin");
+    ui->editUsername->setText("admin");
+
+    ui->rbtnAdmin->setChecked(true);
 
     if(!database_connection())
     {
@@ -30,6 +32,7 @@ Login::~Login()
 
 bool Login::database_connection()
 {
+    db=QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName(DB_HOSTNAME);
     db.setDatabaseName(DB_NAME);
     db.setUserName(DB_USERNAME);
