@@ -5,9 +5,11 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
-#include "globle.h"
 #include <QDebug>
-#include "stuwindows.h"
+
+#include "globle.h"
+#include "adminwindow.h"
+#include "studentwindow.h"
 
 namespace Ui {
 class Login;

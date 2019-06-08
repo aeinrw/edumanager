@@ -12,11 +12,12 @@ Login::Login(QWidget *parent) :
     this->setFixedSize(500,400);
     //设置标题
     this->setWindowTitle("教务管理系统");
+    this->setAttribute(Qt::WA_DeleteOnClose);
 
     ui->editPassword->setText("admin");
     ui->editUsername->setText("admin");
 
-    ui->rbtnAdmin->setChecked(true);
+    ui->rbtnStudent->setChecked(true);
 
     if(!database_connection())
     {
@@ -73,8 +74,9 @@ void Login::on_btnLogin_clicked()
             qDebug()<<"管理员登陆成功";
             QMessageBox::information(this, "提示", "管理员登陆成功");
             this->hide();
-            StuWindows *stu=new StuWindows;
-            stu->show();
+            AdminWindow *admin=new AdminWindow;
+            admin->show();
+
         }
         else
             QMessageBox::information(this, "警告", "用户名或密码错误");
@@ -90,8 +92,9 @@ void Login::on_btnLogin_clicked()
 
             //暂时用学生的代替
             this->hide();
-            StuWindows *stu=new StuWindows;
+            AdminWindow *stu=new AdminWindow;
             stu->show();
+
             //接着做其他的事情
         }
         else
@@ -108,8 +111,8 @@ void Login::on_btnLogin_clicked()
 
             //暂时用学生的代替
             this->hide();
-            StuWindows *stu=new StuWindows;
-            stu->show();
+            StudentWindow *student=new StudentWindow;
+            student->show();
             //接着做其他的事情
         }
         else

@@ -1,83 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>StuWindows</class>
- <widget class="QMainWindow" name="StuWindows">
+ <class>AdminWindow</class>
+ <widget class="QMainWindow" name="AdminWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>438</width>
-    <height>248</height>
+    <height>268</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tabStudent">
        <attribute name="title">
         <string>学生表</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
         <item>
          <widget class="QTableView" name="tableViewStudent"/>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tabTeacher">
        <attribute name="title">
         <string>老师表</string>
        </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QTableView" name="tableViewTeacher"/>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="tabCourse">
        <attribute name="title">
         <string>课程表</string>
        </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QTableView" name="tableViewCourse"/>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_4">
+      <widget class="QWidget" name="tabAdmin">
        <attribute name="title">
         <string>管理员表</string>
        </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QTableView" name="tableViewAdmin"/>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>438</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>选项</string>
-    </property>
-    <addaction name="actOpenDB"/>
-    <addaction name="separator"/>
-    <addaction name="actRecAppend"/>
-    <addaction name="actRecInsert"/>
-    <addaction name="actRecDelete"/>
-    <addaction name="separator"/>
-    <addaction name="actSubmit"/>
-    <addaction name="actRevert"/>
-    <addaction name="separator"/>
-    <addaction name="actQuit"/>
-   </widget>
-   <addaction name="menu"/>
-  </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -86,6 +90,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actOpenDB"/>
+   <addaction name="actQuit"/>
    <addaction name="separator"/>
    <addaction name="actRecAppend"/>
    <addaction name="actRecInsert"/>
@@ -93,10 +98,13 @@
    <addaction name="separator"/>
    <addaction name="actRevert"/>
    <addaction name="actSubmit"/>
-   <addaction name="separator"/>
-   <addaction name="actQuit"/>
   </widget>
   <action name="actOpenDB">
+   <property name="icon">
+    <iconset>
+     <normaloff>rsc/icon/open.png</normaloff>
+     <normalon>:/icon/rsc/icon/open.png</normalon>rsc/icon/open.png</iconset>
+   </property>
    <property name="text">
     <string>打开</string>
    </property>
@@ -105,6 +113,10 @@
    </property>
   </action>
   <action name="actQuit">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/rsc/icon/quit.png</normaloff>:/icon/rsc/icon/quit.png</iconset>
+   </property>
    <property name="text">
     <string>退出</string>
    </property>
@@ -113,6 +125,10 @@
    </property>
   </action>
   <action name="actRecAppend">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/rsc/icon/append.png</normaloff>:/icon/rsc/icon/append.png</iconset>
+   </property>
    <property name="text">
     <string>添加</string>
    </property>
@@ -121,6 +137,10 @@
    </property>
   </action>
   <action name="actRecInsert">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/rsc/icon/insert.png</normaloff>:/icon/rsc/icon/insert.png</iconset>
+   </property>
    <property name="text">
     <string>插入</string>
    </property>
@@ -129,6 +149,10 @@
    </property>
   </action>
   <action name="actSubmit">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/rsc/icon/submit.png</normaloff>:/icon/rsc/icon/submit.png</iconset>
+   </property>
    <property name="text">
     <string>保存</string>
    </property>
@@ -137,6 +161,10 @@
    </property>
   </action>
   <action name="actRevert">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/rsc/icon/revert.png</normaloff>:/icon/rsc/icon/revert.png</iconset>
+   </property>
    <property name="text">
     <string>取消</string>
    </property>
@@ -145,6 +173,10 @@
    </property>
   </action>
   <action name="actRecDelete">
+   <property name="icon">
+    <iconset resource="rsc.qrc">
+     <normaloff>:/icon/rsc/icon/delete.png</normaloff>:/icon/rsc/icon/delete.png</iconset>
+   </property>
    <property name="text">
     <string>删除</string>
    </property>
@@ -153,6 +185,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="rsc.qrc"/>
+ </resources>
  <connections/>
 </ui>

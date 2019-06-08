@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>rsc/icon/insert.png</file>
+        <file>rsc/icon/open.png</file>
+        <file>rsc/icon/submit.png</file>
+        <file>rsc/icon/append.png</file>
+        <file>rsc/icon/delete.png</file>
+        <file>rsc/icon/quit.png</file>
+        <file>rsc/icon/revert.png</file>
+    </qresource>
+</RCC>

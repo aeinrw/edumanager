@@ -28,18 +28,24 @@ SOURCES += \
         main.cpp \
         login.cpp \
     globle.cpp \
-    stuwindows.cpp
+    studentwindow.cpp \
+    adminwindow.cpp
 
 HEADERS += \
         login.h \
     globle.h \
-    stuwindows.h
+    studentwindow.h \
+    adminwindow.h
 
 FORMS += \
         login.ui \
-    stuwindows.ui
+    studentwindow.ui \
+    adminwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    rsc.qrc

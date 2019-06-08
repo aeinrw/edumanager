@@ -5,25 +5,26 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QtSql>
-#include "globle.h"
 #include <QMessageBox>
 
+#include "globle.h"
+
 namespace Ui {
-class StuWindows;
+class AdminWindow;
 }
 
-class StuWindows : public QMainWindow
+class AdminWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit StuWindows(QWidget *parent = nullptr);
-    ~StuWindows();
+    explicit AdminWindow(QWidget *parent = nullptr);
+    ~AdminWindow();
 
 private slots:
-    void on_actOpenDB_triggered();
     void on_currentChanged(const QModelIndex &current,const QModelIndex &previous);
-    void on_currentRowChanged(const QModelIndex &current,const QModelIndex &previous);
+
+    void on_actOpenDB_triggered();
 
     void on_actQuit_triggered();
 
@@ -38,10 +39,20 @@ private slots:
     void on_actRevert_triggered();
 
 private:
-    Ui::StuWindows *ui;
+    Ui::AdminWindow *ui;
     QSqlDatabase db;
-    QSqlTableModel *tabModel;
-    QItemSelectionModel *theSelection;
+
+    QSqlTableModel *tabModelStudent;
+    QItemSelectionModel *theSelectionStudent;
+
+    QSqlTableModel *tabModelTeacher;
+    QItemSelectionModel *theSelectionTeacher;
+
+    QSqlTableModel *tabModelCourse;
+    QItemSelectionModel *theSelectionCourse;
+
+    QSqlTableModel *tabModelAdmin;
+    QItemSelectionModel *theSelectionAdmin;
 
     void openTable();
     void getFieldNames();
