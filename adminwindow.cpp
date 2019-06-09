@@ -56,8 +56,12 @@ void AdminWindow::on_actOpenDB_triggered()
     db.setPassword(DB_PASSWORD);
 
     if(!db.open())
-        QMessageBox::warning(this,"错误","打开数据库失败",QMessageBox::Ok,QMessageBox::NoButton);
+    {
+        QMessageBox::warning(this,"错误","打开数据库失败,错误信息\n"
+                             +db.lastError().text(),QMessageBox::Ok,QMessageBox::NoButton);
 
+        return;
+    }
     openTable();
 
 }

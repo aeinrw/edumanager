@@ -7,5 +7,6 @@
         <file>rsc/icon/delete.png</file>
         <file>rsc/icon/quit.png</file>
         <file>rsc/icon/revert.png</file>
+        <file>rsc/icon/logo.png</file>
     </qresource>
 </RCC>

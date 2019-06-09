@@ -7,5 +7,6 @@ extern QString DB_USERNAME;
 extern QString DB_PASSWORD;
 extern QString DB_NAME;
 
+extern QString LoginId;
 
 #endif // GLOBLE_H

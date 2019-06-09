@@ -12,7 +12,6 @@ Login::Login(QWidget *parent) :
     this->setFixedSize(500,400);
     //设置标题
     this->setWindowTitle("教务管理系统");
-    this->setAttribute(Qt::WA_DeleteOnClose);
 
     ui->editPassword->setText("admin");
     ui->editUsername->setText("admin");
@@ -106,6 +105,7 @@ void Login::on_btnLogin_clicked()
     {
         if(match_name_password(Id,Password,"student"))
         {
+            LoginId=Id;
             qDebug()<<"学生登陆成功";
             QMessageBox::information(this, "提示", "学生登陆成功");
 
@@ -138,42 +138,6 @@ bool Login::match_name_password(QString ID,QString PASSWORD,QString table)
     }
     return flag;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
