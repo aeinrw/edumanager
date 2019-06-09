@@ -10,6 +10,7 @@
 #include "globle.h"
 #include "adminwindow.h"
 #include "studentwindow.h"
+#include "teacherwindow.h"
 
 namespace Ui {
 class Login;

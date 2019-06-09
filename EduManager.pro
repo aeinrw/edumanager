@@ -29,18 +29,21 @@ SOURCES += \
         login.cpp \
     globle.cpp \
     studentwindow.cpp \
-    adminwindow.cpp
+    adminwindow.cpp \
+    teacherwindow.cpp
 
 HEADERS += \
         login.h \
     globle.h \
     studentwindow.h \
-    adminwindow.h
+    adminwindow.h \
+    teacherwindow.h
 
 FORMS += \
         login.ui \
     studentwindow.ui \
-    adminwindow.ui
+    adminwindow.ui \
+    teacherwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -14,6 +14,8 @@ AdminWindow::AdminWindow(QWidget *parent) :
     ui->tableViewStudent->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->tableViewStudent->setAlternatingRowColors(true);
 
+    ui->tabWidget->setCurrentIndex(0);
+
     ui->actSubmit->setEnabled(false);
     ui->actRevert->setEnabled(false);
     ui->actRecAppend->setEnabled(false);

@@ -13,10 +13,10 @@ Login::Login(QWidget *parent) :
     //设置标题
     this->setWindowTitle("教务管理系统");
 
-    ui->editPassword->setText("admin");
-    ui->editUsername->setText("admin");
+//    ui->editPassword->setText("admin");
+//    ui->editUsername->setText("admin");
 
-    ui->rbtnStudent->setChecked(true);
+    ui->rbtnAdmin->setChecked(true);
 
     if(!database_connection())
     {
@@ -86,15 +86,14 @@ void Login::on_btnLogin_clicked()
     {
         if(match_name_password(Id,Password,"teacher"))
         {
+            LoginId=Id;
             qDebug()<<"教师登陆成功";
             QMessageBox::information(this, "提示", "老师登陆成功");
 
-            //暂时用学生的代替
             this->hide();
-            AdminWindow *stu=new AdminWindow;
-            stu->show();
+            TeacherWindow *teacher=new TeacherWindow;
+            teacher->show();
 
-            //接着做其他的事情
         }
         else
             QMessageBox::information(this, "警告", "用户名或密码错误");
@@ -108,12 +107,10 @@ void Login::on_btnLogin_clicked()
             LoginId=Id;
             qDebug()<<"学生登陆成功";
             QMessageBox::information(this, "提示", "学生登陆成功");
-
-            //暂时用学生的代替
             this->hide();
             StudentWindow *student=new StudentWindow;
             student->show();
-            //接着做其他的事情
+
         }
         else
             QMessageBox::information(this, "警告", "用户名或密码错误");
